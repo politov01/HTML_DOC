@@ -1,5 +1,6 @@
 Contours and Segmentation
 In this chapter, we will cover the following recipes:
+
 Binarization of grayscale images using the Otsu algorithm 
 Finding external and internal contours in a binary image 
 Extracting connected components from a binary image 
