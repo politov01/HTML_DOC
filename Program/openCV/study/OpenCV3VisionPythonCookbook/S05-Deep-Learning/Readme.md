@@ -1,4 +1,4 @@
-Deep Learning
+# Deep Learning
 
 This chapter contains recipes for:
 
