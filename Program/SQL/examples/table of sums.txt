@@ -1,0 +1,41 @@
+--AVG
+--608
+
+WITH Numbers AS (
+    SELECT 1 AS num
+    UNION ALL SELECT 2
+    UNION ALL SELECT 3
+    UNION ALL SELECT 4
+    UNION ALL SELECT 5
+    UNION ALL SELECT 6
+    UNION ALL SELECT 7
+    UNION ALL SELECT 8
+    UNION ALL SELECT 9
+    UNION ALL SELECT 10
+)
+SELECT 
+    RIGHT('00' + CAST(n1.num as varchar(2)), 2) as sort_1,
+    RIGHT('00' + CAST(n2.num as varchar(2)), 2) as sort_2,
+    n1.num AS add1,
+    n2.num AS add2,
+    n1.num + n2.num AS SUM
+FROM 
+    Numbers n1
+CROSS JOIN 
+    Numbers n2
+ORDER BY 
+    sort_1, sort_2
+----------------------------------------------------------
+
+SELECT * FROM (VALUES (1),(2),(3),(4),(5),(6),(7),(8),(9),(10)
+) t (number)
+ORDER BY t
+
+WITH basket AS (
+SELECT * FROM (VALUES (1),(2),(3),(4),(5),(6),(7),(8),(9),(10)
+) t(number)
+)
+SELECT * FROM basket
+ORDER BY number
+
+
