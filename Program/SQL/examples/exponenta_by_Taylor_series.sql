@@ -7,9 +7,7 @@ WITH RECURSIVE taylor_exp AS (
   -- Начальный член: n=0, term=1, sum=1
   SELECT
     1 as nn,
-    --::numeric(10,2)
     CAST(0.0000000000000000000000000000000000000000000000000000000000000000000 AS Numeric) AS n,
-    --0.0::numeric(50,48) AS n,
     CAST(1.0000000000000000000000000000000000000000000000000000000000000000000 AS Numeric)  AS term,
     CAST(1.0000000000000000000000000000000000000000000000000000000000000000000 AS Numeric)  AS exponenta
     --1.0 AS x  -- Замените 2.0 на нужное x
@@ -18,6 +16,8 @@ WITH RECURSIVE taylor_exp AS (
   SELECT
     nn+1,
     n + 1,
+    --- если в степень возводить
+    --- term * x / (n + 1),  -- term_{n+1} = term_n * x / (n+1) 
     term / (n + 1),  -- term_{n+1} = term_n * x / (n+1)
     exponenta + term / (n + 1)
     ---x
